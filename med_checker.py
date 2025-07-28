@@ -2,17 +2,16 @@ import streamlit as st
 import pandas as pd
 import difflib
 
-# Load excluded list
+# Load exclusion list
 excluded_df = pd.read_csv("excluded_drug_list.csv")
 EXCLUDED = set(excluded_df["excluded_drug"].str.lower().tolist())
 
-# Set up session state
 if "entered_meds" not in st.session_state:
     st.session_state.entered_meds = []
 if "corrections" not in st.session_state:
     st.session_state.corrections = {}
 
-st.title("Exclusion Checker")
+st.title("Medication Exclusion Checker")
 st.write("Enter one or more drug names (comma-separated or one per line):")
 
 input_text = st.text_area("Drug name(s):")
