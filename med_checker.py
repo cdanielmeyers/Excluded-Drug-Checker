@@ -11,7 +11,17 @@ if "entered_meds" not in st.session_state:
 if "corrections" not in st.session_state:
     st.session_state.corrections = {}
 
-st.title("Medication Exclusion Checker")
+st.title("Medication Exclusion Checker: Study MTR-601-101")
+
+st.markdown(
+    "<p style='font-size: 14px; color: #666;'>"
+    "Disclaimer: This is not a validated tool, but rather an optional/support tool to assist study staff in evaluation of excluded medications. "
+    "Please refer to the study protocol for full details on excluded medications. "
+    "Please reach out to your CRA with any questions."
+    "</p>",
+    unsafe_allow_html=True
+)
+
 st.write("Enter one or more drug names (comma-separated or one per line):")
 
 input_text = st.text_area("Drug name(s):")
